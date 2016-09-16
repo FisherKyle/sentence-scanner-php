@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <!-- integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" -->
+        <title>word scanner</title>
+    </head>
+
+    <body>
+        <div class="container jumbotron">
+
+            <form action="/results">
+                <div class="form-group has-primary">
+                    <input type="text" id="scan_sentence" name="scan_sentence" class="form-control" placeholder="enter sentence" >
+                    <input type="text" id="scan_word" name="scan_word" class="form-control" placeholder="enter word">
+                </div>
+                <h3>click scan to display the number of times that the word provided occurs in the sentence or sentences provided above</h3>
+                <button type="submit" class="btn btn-success">scan</button>
+            </form>
+        </div>
+    </body>
+</html>
