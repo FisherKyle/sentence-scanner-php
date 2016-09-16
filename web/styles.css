@@ -1,0 +1,46 @@
+body {
+  background-color: #112d3b;
+}
+
+#big_box {
+  border-radius: 0px 0px 20px 20px;
+  background-color: #9fbcc6;
+  position:fixed;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  align-items:center;
+
+}
+
+.btn {
+  background-color: #396060;
+  border-color: #99bcc6;
+  margin-top: 2%;
+}
+
+h5 {
+  font-family: "Avenir";
+  font-size: 120%;
+}
+
+input {
+  font-family: "Avenir";
+  margin-bottom: 2%;
+}
+
+#left_col {
+  float: left;
+  margin-left: 2%;
+  max-width: 375px;
+  text-align: left;
+}
+
+#right_col {
+  float: left;
+  margin-left: 4%;
+  margin-top: 3%;
+}
+
+#scan_word {
+  max-width: 440px;
+}
