@@ -33,37 +33,37 @@ ___
 
 ###### > **>** **User is provided two form fields with placeholder text. One prompts them to enter a sentence or sentences, the other prompts them to enter a word. Underneath, text will explain the functionality of program. After filling out both fields, upon clicking the submit button, the informational text will be replaced by text displaying the number of times their word was found within the sentence or sentences provided.**
 ###
-*  **sample : form field 1 (blank)** > **>**  _enter a sentence or sentences_
-*  **sample : form field 2 (blank)** > **>**  _enter a word_
+*  **sample : form field 1 (blank)** > **>**  [_enter a sentence or sentences_]
+*  **sample : form field 2 (blank)** > **>**  [_enter a word_]
 >  **[** Click submit to determine how many times the word you provided appears within the sentence or sentences your provided.  **]**
 
 *  **sample : form field 1 input ** > **>**  "a"
 *  **sample : form field 2 input ** > **>**  "b"
->  **[** That word appears **0** time(s) within the sentence or sentences your provided. **]**
+>  **[** That word appears **0** time(s) within the sentence or sentences you provided. **]**
 
 *  **sample : form field 1 input ** > **>**  " "
 *  **sample : form field 2 input ** > **>**  "b"
->  **[** That word appears **0** time(s) within the sentence or sentences your provided. **]**
+>  **[** That word appears **0** time(s) within the sentence or sentences you provided. **]**
 
 *  **sample : form field 1 input ** > **>**  "a"
 *  **sample : form field 2 input ** > **>**  " "
->  **[** That word appears **0** time(s) within the sentence or sentences your provided. **]**
+>  **[** That word appears **0** time(s) within the sentence or sentences you provided. **]**
 
 *  **sample : form field 1 input ** > **>**  "b"
 *  **sample : form field 2 input ** > **>**  "b"
->  **[** That word appears **1** time(s) within the sentence or sentences your provided. **]**
+>  **[** That word appears **1** time(s) within the sentence or sentences you provided. **]**
 
 *  **sample : form field 1 input ** > **>**  "b"
 *  **sample : form field 2 input ** > **>**  "brown"
->  **[** That word appears **0** time(s) within the sentence or sentences your provided. **]**
+>  **[** That word appears **0** time(s) within the sentence or sentences you provided. **]**
 
 *  **sample : form field 1 input ** > **>**  "brown"
 *  **sample : form field 2 input ** > **>**  "b"
->  **[** That word appears **1** time(s) within the sentence or sentences your provided. **]**
+>  **[** That word appears **1** time(s) within the sentence or sentences you provided. **]**
 
 *  **sample : form field 1 input ** > **>**  "Brown chicken, brown cow"
 *  **sample : form field 2 input ** > **>**  "brown"
->  **[** That word appears **2** time(s) within the sentence or sentences your provided. **]**
+>  **[** That word appears **2** time(s) within the sentence or sentences you provided. **]**
 
 ####
 ___
