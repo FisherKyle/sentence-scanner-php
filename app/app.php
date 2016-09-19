@@ -16,8 +16,8 @@
         $scanned_sentence = $_POST['scan_sentence'];
         $scanned_word = $_POST['scan_word'];
     //NOTE this should be your logic placement for word counter..
-    // $scanned_number = 
-        return $app['twig']->render("home.html.twig", array('count'=>$scanned_number, 'word'=>$scanned_word));
+    $scanned_number = 2;
+        return $app['twig']->render("home.html.twig", array('number'=>$scanned_number, 'word'=>$scanned_word));
     });
 
     return $app;

@@ -5,10 +5,10 @@
         private $scan_sentence;
         private $scan_number;
 
-        function __construct($scan_word, $scan_sentence) { //NOTE variables here potentially problematic
+        function __construct($scan_word, $scan_sentence, $scan_number) { //NOTE variables here potentially problematic
             $this->scan_sentence = $sentence;
             $this->scan_word = $word;
-            $this->scan_count = 0;
+            $this->scan_number = 0;
         }
 
         function getScannedSentence() {
@@ -33,11 +33,11 @@
         }
 
         function getScanCount() {
-           return $this->scan_count;
+           return $this->scan_number;
         }
 
-        function setCount($scan_count) {
-           $this->count = (int) $scan_count;
+        function setCount($scan_number) {
+           $this->number = (int) $scan_number;
         }
     }
 ?>

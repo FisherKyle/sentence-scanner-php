@@ -8,7 +8,7 @@
 
     <body>
         <div class="container jumbotron" id="big_box">
-            <form action="/results">
+            <form action="/results" method="post">
                 <div class="form-group has-primary">
 
                     <input class="form-control" type="text" id="scan_sentence" name="scan_sentence"  placeholder="enter sentence">
@@ -26,10 +26,14 @@
 
             <div>
                 <h5>
-                  {{ word }} occurs {{ scanned_number }} within the provided sentence or sentences.
+                  {% if number.getScanCount is not empty %}
+
+                  {{ word }} occurs {{ number }} times within the provided sentence or sentences.
+
+                  {% endif %}
                 </h5>
             </div>
-              
+
         </div>
     </body>
 </html>
