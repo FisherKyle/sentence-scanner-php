@@ -1,10 +1,9 @@
 <?php
 
-    require_once (__DIR__ . "/../src/InputScanner.php");
+    require_once (__DIR__ . "/../src/sentence_scanner.php");
 
     class SentenceScannerTest extends PHPUnit_Framework_TestCase
 
-  
     {
         function test_WordSingleChar() {
 
