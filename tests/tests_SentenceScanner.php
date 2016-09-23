@@ -5,18 +5,18 @@
     class SentenceScannerTest extends PHPUnit_Framework_TestCase
 
     {
-        function test_WordSingleChar() {
-
+        function test_Empty() {
             //ARRANGE
-            $word =
-            $word =
-            $expected_output =
-            $sentence_scanner_instance = new SentenceScanner($input_word_string_to_check, $input_word_to_check);
+            $input_sentence_test = "test sentence";
+            $text_input = "";
+            $expected_output = 0;
+            $word_repeat_counter_instance = new WordRepeatCounter($term_input, $text_input);
 
             //ACT
-            $test_result = $sentence_scanner_instance->countRepeats();
+            $test_result = $word_repeat_counter_instance->countRepeats();
 
             //ASSERT
             $this->assertEquals($expected_output, $test_result);
+        }
 
 ?>

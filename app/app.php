@@ -10,14 +10,13 @@
         return $app["twig"]->render("home.html.twig");
     });
 
-    $app->post('/results', function() use ($app) {
+    $app->get('/results', function() use ($app) {
 
+        $scanned_sentence = $_GET['scan_sentence'];
+        $scanned_word = $_GET['scan_word'];
         $new_scanner = new SentenceScanner();
-        $scanned_sentence = $_POST['scan_sentence'];
-        $scanned_word = $_POST['scan_word'];
-    //NOTE this should be your logic placement for word counter..
-    $scanned_number = 2;
-        return $app['twig']->render("home.html.twig", array('number'=>$scanned_number, 'word'=>$scanned_word));
+        $scanned_number = $new_scanner->wordRepeats();
+        return $app['twig']->render("home.html.twig", array('number'=>$scanned_number, 'word'=>$scanned_word, 'sentence'=>$scanned_sentence));
     });
 
     return $app;

@@ -57,10 +57,6 @@ ___
 *  **sample : form field 2 input ** > **>**  "brown"
 >  **[** That word appears **0** time(s) within the sentence or sentences you provided. **]**
 
-*  **sample : form field 1 input ** > **>**  "brown"
-*  **sample : form field 2 input ** > **>**  "b"
->  **[** That word appears **1** time(s) within the sentence or sentences you provided. **]**
-
 *  **sample : form field 1 input ** > **>**  "Brown chicken, brown cow"
 *  **sample : form field 2 input ** > **>**  "brown"
 >  **[** That word appears **2** time(s) within the sentence or sentences you provided. **]**
