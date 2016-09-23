@@ -1,13 +1,13 @@
 <?php
 
     class SentenceScanner {
-        private $scan_word;
-        private $scan_sentence;
-        private $scan_number;
+        public $scan_word;
+        public $scan_sentence;
+        public $scan_number;
 
         function __construct($scan_word, $scan_sentence, $scan_number) {
-            $this->scan_sentence = $sentence;
-            $this->scan_word = $word;
+            $this->scan_word = $scan_sentence;
+            $this->scan_sentence = $scan_sentence;
             $this->scan_number = 0;
         }
 
@@ -35,6 +35,24 @@
 
         function setScanCount($scan_number) {
            $this->number = (int) $scan_number;
+        }
+
+        function wordRepeats()
+        {
+            $result = 0;
+            $lower_word = strtolower($this->scan_word);
+            $lower_sentence = strtolower($this->sentence_text);
+            $explo_sentence = explode(" ", $lower_sentence);
+
+            foreach($explo_sentence as $scan_match)
+            {
+                if($lower_word === $scan_match)
+                {
+                    $result += 1;
+                }
+            }
+
+            return $result;
         }
     }
 ?>

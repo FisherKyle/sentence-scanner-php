@@ -5,18 +5,64 @@
     class SentenceScannerTest extends PHPUnit_Framework_TestCase
 
     {
-        function test_Empty() {
-            //ARRANGE
-            $input_sentence_test = "test sentence";
-            $text_input = "";
-            $expected_output = 0;
-            $word_repeat_counter_instance = new WordRepeatCounter($term_input, $text_input);
+        function test_noMatch()
+        {
+            //Arrange
+            $scan_sentence = "b";
+            $scan_word = "a";
+            $scan_number = new SentenceScanner($scan_sentence, $scan_word);
 
-            //ACT
-            $test_result = $word_repeat_counter_instance->countRepeats();
+            //Act
+            $result = $scan_number->wordRepeats();
+            $expected_result = 0;
 
-            //ASSERT
-            $this->assertEquals($expected_output, $test_result);
+            //Assert
+            $this->assertEquals($expected_result, $result);
+        }
+
+        function test_oneWordMatch()
+        {
+            //Arrange
+            $scan_sentence = "brown";
+            $scan_word = "brown";
+            $scan_number = new SentenceScanner($scan_sentence, $scan_word);
+
+            //Act
+            $result = $scan_number->wordRepeats();
+            $desired_result = 1;
+
+            //Assert
+            $this->assertEquals($expected_result, $result);
+        }
+
+        function test_wordToTwoMatch()
+        {
+            //Arrange
+            $scan_sentence = "brown cow";
+            $scan_word = "brown";
+            $scan_number = new SentenceScanner($scan_sentence, $scan_word);
+
+            //Act
+            $result = $scan_number->wordRepeats();
+            $expected_result = 1;
+
+            //Assert
+            $this->assertEquals($expected_result, $result);
+        }
+
+        function test__wordToMultiple()
+        {
+            //Arrange
+            $scan_sentence = "Brown chicken, brown cow.";
+            $scan_word = "brown";
+            $scan_number = new SentenceScanner($scan_sentence, $scan_word);
+
+            //Act
+            $result = $scan_number->wordRepeats();
+            $desired_result = 2;
+
+            //Assert
+            $this->assertEquals($expected_result, $result);
         }
 
 ?>
