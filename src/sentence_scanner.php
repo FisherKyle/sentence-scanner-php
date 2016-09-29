@@ -5,7 +5,7 @@
         public $scan_sentence;
         public $scan_number;
 
-        function __construct($scan_word, $scan_sentence, $scan_number) {
+        function __construct($scan_word, $scan_sentence) {
             $this->scan_word = $scan_sentence;
             $this->scan_sentence = $scan_sentence;
             $this->scan_number = 0;
@@ -40,8 +40,8 @@
         function wordRepeats()
         {
             $result = 0;
-            $lower_word = strtolower($this->scan_word);
-            $lower_sentence = strtolower($this->sentence_text);
+            $lower_word = strtolower($this->getScanWord());
+            $lower_sentence = strtolower($this->getScannedSentence());
             $explo_sentence = explode(" ", $lower_sentence);
 
             foreach($explo_sentence as $scan_match)

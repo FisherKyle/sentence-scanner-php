@@ -15,8 +15,14 @@
 
         $scanned_sentence = $_GET['scan_sentence'];
         $scanned_word = $_GET['scan_word'];
-        $new_scanner = new SentenceScanner($_GET["scan_word"], $_GET["scan_sentence"], $_GET[$scan_number]);
+        $new_scanner = new SentenceScanner($_GET["scan_word"], $_GET["scan_sentence"]);
         $scanned_number = $new_scanner->wordRepeats();
+        print("\nscanned number:\n");
+        var_dump($scanned_number);
+        print("\n");
+        print("\nscanned word:\n");
+        var_dump($scanned_word);
+        print("\n");
         return $app['twig']->render("home.html.twig", array('number'=>$scanned_number, 'word'=>$scanned_word, 'sentence'=>$scanned_sentence));
     });
 

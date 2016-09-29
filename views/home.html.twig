@@ -26,11 +26,12 @@
 
             <div>
                 <h5>
-                  {% if number.getScanCount is not empty %}
+                    {% if number %}
 
-                  {{ word }} occurs {{ number }} times within the provided sentence or sentences.
+                        {{ word }} occurs {{ number }} times within the provided sentence or sentences.
 
-                  {% endif %}
+                    {% endif %}
+
                 </h5>
             </div>
 
