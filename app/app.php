@@ -11,10 +11,14 @@
         return $app["twig"]->render("home.html.twig");
     });
 
-    $app->get("/", function() use ($app) {
-        $newScanner = new SentenceScanner;
-        $frequency = $newScanner->freqRepeats($_GET["word"], $_GET["sentence"]);
-        return $app["twig"]->render("results.html.twig", array("result" => $frequency));
+    $app->get("/frequency_count", function() use ($app) {
+
+        $word_scan = $_GET["word"];
+        $sentence_scan = $_GET["sentence"];
+        $new_sentence_scanner = new SentenceScanner($word_scan, $sentence_scan);
+        $count = $new_sentence_scanner->countRepeats();
+
+        return $app["twig"]->render("results.html.twig", array("word_result" => $word_scan, "sentence_result" => $sentence_scan, "word_count" => $count));
     });
 
     return $app;

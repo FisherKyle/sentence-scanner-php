@@ -2,31 +2,68 @@
 
     class SentenceScanner {
 
-        public $frequency;
+        public $word_scan;
+        public $sentence_scan;
+        public $count;
 
-        function __construct() {
-            $this->frequency = 0;
+        function __construct($word, $sentence) {
+            $this->word_scan = $word;
+            $this->sentence_scan = $sentence;
+            $this->count = 0;
         }
 
 //----get / set----//
 
-        function getFrequency() {
-            return $this->getfrequency;
+        function getSentence() {
+
+            return $this->sentence_scan;
         }
 
-        function freqRepeats($inputWord, $inputSentence)
-        {
-            $wordScan = strtolower($inputWord);
-            $sentenceScan = explode(" ", $inputString);
+        function setSentence($sentence) {
 
-            for ($index = 0; $index < count($sentenceScan); $index++) {
+          $this->sentence_scan = $sentence;
+        }
 
-                if ($wordScan === strtolower($sentenceScan[$index])) {
+        function getWord() {
 
-                    $this->frequency++;
-                }
-            }
+            return $this->word_scan;
+        }
+
+        function setWord($word) {
+
+          $this->word_scan = (string) $word;
+        }
+
+        function getCount() {
             return $this->frequency;
         }
-    }
+
+        function setCount($word_count) {
+
+          $this->count = (int) $word_count;
+        }
+
+        function countRepeats() {
+
+          $sentence_explode = explode(" ", $this->getSentence());
+          $word_provided = $this->getWord();
+          $word_count = $this->setCount(0);
+
+          if ($word_provided && $this->getSentence()) {
+
+              for ($i = 0; $i < count($sentence_explode); $i++) {
+
+                  if ($sentence_explode[$i] === $word_provided) {
+                      $word_count++;
+                  }
+              }
+          }
+          else {
+              return -1;
+          }
+
+          return $word_count;
+
+      }
+  }
 ?>

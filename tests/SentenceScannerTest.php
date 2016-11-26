@@ -4,20 +4,35 @@
 
     class SentenceScannerTest extends PHPUnit_Framework_TestCase {
 
-        // function test_noMatch()
-        // {
-        //     //Arrange
-        //     $scan_sentence = "b";
-        //     $scan_word = "a";
-        //     $scan_number = new SentenceScanner($scan_sentence, $scan_word);
-        //
-        //     //Act
-        //     $result = $scan_number->wordRepeats();
-        //     $expected_result = 0;
-        //
-        //     //Assert
-        //     $this->assertEquals($expected_result, $result);
-        // }
+        function test_noInputWord()
+        {
+            //Arrange
+            $scan_sentence = "testing for words";
+            $scan_word = "";
+            $expected_result = -1;
+            $scan_number = new SentenceScanner($scan_sentence, $scan_word);
+
+            //Act
+            $result = $scan_number->wordRepeats();
+
+            //Assert
+            $this->assertEquals($expected_result, $result);
+        }
+
+        function test_noInputSentence()
+        {
+            //Arrange
+            $scan_sentence = "";
+            $scan_word = "word";
+            $expected_result = -1;
+            $scan_number = new SentenceScanner($scan_sentence, $scan_word);
+
+            //Act
+            $result = $scan_number->wordRepeats();
+
+            //Assert
+            $this->assertEquals($expected_result, $result);
+        }
 
         function test_frequencySingle() {
 
