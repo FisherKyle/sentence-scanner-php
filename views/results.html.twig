@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+    {% include "partials/header.html" %}
+
+    <body>
+
+        <div class="jumbotron">
+
+            <h3>The word you selected appeared {{ result }} times in the provided sentence.</h3>
+
+            {% include "partials/input.html" %}
+
+        </div>
+    </body>
+</html>

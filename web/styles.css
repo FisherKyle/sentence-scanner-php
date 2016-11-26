@@ -9,6 +9,7 @@ body {
   left: 50%;
   transform: translate(-50%, 0%);
   align-items:center;
+  min-width: 600px;
 
 }
 
