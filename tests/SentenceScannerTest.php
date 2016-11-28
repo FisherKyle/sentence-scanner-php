@@ -7,13 +7,13 @@
         function test_noInputWord()
         {
             //Arrange
-            $scan_sentence = "testing for words";
             $scan_word = "";
+            $scan_sentence = "testing for words";
             $expected_result = -1;
-            $scan_number = new SentenceScanner($scan_sentence, $scan_word);
+            $scanner = new SentenceScanner($scan_sentence, $scan_word);
 
             //Act
-            $result = $scan_number->wordRepeats();
+            $result = $scanner->countRepeats();
 
             //Assert
             $this->assertEquals($expected_result, $result);
@@ -22,61 +22,73 @@
         function test_noInputSentence()
         {
             //Arrange
-            $scan_sentence = "";
             $scan_word = "word";
+            $scan_sentence = "";
             $expected_result = -1;
-            $scan_number = new SentenceScanner($scan_sentence, $scan_word);
+            $scanner = new SentenceScanner($scan_sentence, $scan_word);
 
             //Act
-            $result = $scan_number->wordRepeats();
+            $result = $scanner->countRepeats();
 
             //Assert
             $this->assertEquals($expected_result, $result);
         }
 
-        function test_frequencySingle() {
+        function test_frequencySingleLetter() {
 
             // Arrange
-            $test_frequency = 0;
+            $scan_word = "i";
+            $scan_sentence = "i";
             $expected_output = 1;
-            $sentenceScan_1 = new SentenceScanner;
-            $test_word = "i";
-            $test_sentence = "i love bavarian creme donuts.";
+            $scanner = new SentenceScanner($scan_word, $scan_sentence);
 
             // Act
-            $test_result = $sentenceScan_1->freqRepeats($test_word, $test_string);
+            $test_result = $scanner->countRepeats();
 
             // Assert
             $this->assertEquals($expected_output, $test_result);
         }
 
-        function test_frequencyDouble() {
+        function test_frequencySingleWord() {
 
             // Arrange
-            $test_score = 0;
-            $expected_output = 2;
-            $sentenceScan_2 = new SentenceScanner;
-            $test_word = "ice";
-            $test_sentence = "i love ice cream cones even on days where ice is on the road.";
+            $scan_word = "ice";
+            $scan_sentence = "ice";
+            $expected_output = 1;
+            $scanner = new SentenceScanner($scan_word, $scan_sentence);
 
             // Act
-            $test_result = $sentenceScan_2->freqRepeats($test_word, $test_string);
+            $test_result = $scanner->countRepeats();
 
             // Assert
             $this->assertEquals($expected_output, $test_result);
         }
 
-        function test_frequencyMultiple() {
+        function test_frequencySingleWordInSentence() {
 
             // Arrange
-            $test_score = 0;
+            $expected_output = 1;
+            $scan_word = "ice";
+            $scan_sentence = "i love ice cream cones";
+            $scanner = new SentenceScanner($scan_word, $scan_sentence);
+
+            // Act
+            $test_result = $scanner->countRepeats();
+
+            // Assert
+            $this->assertEquals($expected_output, $test_result);
+        }
+
+        function test_frequencyMultipleWord() {
+
+            // Arrange
+            $scan_word = "ice";
+            $scan_sentence = "I gots ice on my neck, ice on my fingers, ice on the ground, bling bling.";
             $expected_output = 3;
-            $sentenceScan_3 = new SentenceScanner;
-            $test_word = "ice";
-            $test_sentence = "I gots ice on my neck, ice on my fingers, ice on the ground, bling bling.";
+            $scanner = new SentenceScanner($scan_word, $scan_sentence);
 
             // Act
-            $test_result = $sentenceScan_3->freqRepeats($test_word, $test_string);
+            $test_result = $scanner->countRepeats();
 
             // Assert
             $this->assertEquals($expected_output, $test_result);
