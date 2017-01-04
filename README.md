@@ -5,6 +5,7 @@ ___
  _by_ : _**K y l e   F i s h e r**_  
 **********
 ***
+![sample screenshot](sentenceScan.png)
 ### //  **description**
 ###### > **>** **A program that tells the user how many words are in a specific sentence or sentences by allowing them to input a sentence or sentences as well as a word to be searched for within the aforementioned sentence or sentences.**
 ###
